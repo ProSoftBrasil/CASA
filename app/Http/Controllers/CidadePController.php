@@ -36,10 +36,8 @@ class CidadePController extends Controller
 
         $cidadep->save();
 
-
-
-
         return redirect()->route('cidadep.index');
+        //teste
     }
 
     public function edit(CidadeP $cidadep, string | int $id)
