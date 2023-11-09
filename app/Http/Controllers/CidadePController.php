@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 class CidadePController extends Controller
 {
     public function index(){
+       
+        $cidades = CidadeP::where('id','>',0)->limit(10)->get();
 
-        $cidades = CidadeP::all();
-
-        return view('cidadep',compact('cidades'));
+        return view('cidadep/index',compact('cidades'));
     }
 
     public function show(string | int $id)

@@ -32,6 +32,14 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/cidadep', [CidadePController::class, 'index'])->name('getCadastroPassagens');
+    Route::get('/cidadep/create', [DadosVeiculoController::class, 'create'])->name('cidadep.create');
+    Route::post('/cidadep', [DadosVeiculoController::class, 'store'])->name('cidadep.store');
+
+Route::get('/cidadep/{id}', [DadosVeiculoController::class, 'show'])->name('cidadep.show');
+
+Route::get('/cidadep/{id}/edit', [DadosVeiculoController::class, 'edit'])->name('cidadep.edit');
+Route::put('/cidadep/{id}', [DadosVeiculoController::class, 'update'])->name('cidadep.update');
+Route::delete('/cidadep/{id}', [DadosVeiculoController::class, 'destroy'])->name('cidadep.destroy');
    
 
 
